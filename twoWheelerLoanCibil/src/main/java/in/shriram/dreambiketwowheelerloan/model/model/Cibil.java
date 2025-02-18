@@ -1,4 +1,4 @@
-package in.shriram.dreambiketwowheelerloan.model.entity;
+package in.shriram.dreambiketwowheelerloan.model.model;
 
 import java.util.Date;
 
