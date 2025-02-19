@@ -7,3 +7,4 @@ public interface CibilService {
 	public Cibil updateCibilStatus(int cibilId, String status);
 
 }
+ 

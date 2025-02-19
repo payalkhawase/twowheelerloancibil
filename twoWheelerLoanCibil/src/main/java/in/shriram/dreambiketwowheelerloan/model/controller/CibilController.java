@@ -23,6 +23,6 @@ public class CibilController {
 		Cibil co = cs.updateCibilStatus(cibilId, status);
 		
 		return new ResponseEntity<Cibil>(co,HttpStatus.OK);
-	}
+	} 
 
 }
