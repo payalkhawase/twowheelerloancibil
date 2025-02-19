@@ -10,4 +10,14 @@ public class CibilController {
 
 	@Autowired
 	CibilService cs;
+		
+	@PutMapping("updateCibilStatus/{cibilId}/{status}")
+	public ResponseEntity<Cibil> updateCibil(@PathVariable("cibilId") int cibilId, @PathVariable("status") String status) {
+
+		Cibil co = cs.updateCibilStatus(cibilId, status);
+		
+		return new ResponseEntity<Cibil>(co,HttpStatus.OK);
+	} 
+
+
 }
