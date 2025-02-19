@@ -9,13 +9,13 @@ import in.shriram.dreambiketwowheelerloan.model.service.CibilService;
 
 @Service
 public class CibilServiceImpl implements CibilService{
-	
+
 	@Autowired
 	CibilRepo cr;
 
 	@Override 
 	public Cibil updateCibilStatus(int cibilId, String status) {
-		// TODO Auto-generated method stub
+		
 		Cibil co = cr.findById(cibilId).get();
 		
 		Cibil cu = new Cibil();
