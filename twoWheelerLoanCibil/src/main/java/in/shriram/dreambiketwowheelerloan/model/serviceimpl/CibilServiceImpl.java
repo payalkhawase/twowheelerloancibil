@@ -1,5 +1,6 @@
 package in.shriram.dreambiketwowheelerloan.model.serviceimpl;
 
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -26,6 +27,12 @@ public class CibilServiceImpl implements CibilService{
 		cu.setStatus(status);
 		
 		return cr.save(cu);
+	}
+
+	@Override
+	public Cibil getCibilById(int cibilId) {
+				
+		return cr.findById(cibilId).get();
 	}
 
 }
