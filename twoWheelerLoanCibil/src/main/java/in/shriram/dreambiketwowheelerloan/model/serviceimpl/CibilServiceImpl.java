@@ -3,6 +3,7 @@ package in.shriram.dreambiketwowheelerloan.model.serviceimpl;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import in.shriram.dreambiketwowheelerloan.model.model.Cibil;
 import in.shriram.dreambiketwowheelerloan.model.repository.CibilRepo;
 import in.shriram.dreambiketwowheelerloan.model.service.CibilService;
 
@@ -14,7 +15,7 @@ public class CibilServiceImpl implements CibilService{
 
 	@Override 
 	public Cibil updateCibilStatus(int cibilId, String status) {
-		// TODO Auto-generated method stub
+		
 		Cibil co = cr.findById(cibilId).get();
 		
 		Cibil cu = new Cibil();
