@@ -12,6 +12,7 @@ import lombok.Data;
 @Data
 public class Cibil {
 
+	@Id
 	private int cibilId;
 	private int cibilScore;
 	private Date cibilscoredDateTime;
