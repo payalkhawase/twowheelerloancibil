@@ -18,7 +18,7 @@ import lombok.Data;
 @Data
 public class Cibil {
 
-	@Id
+	@Id  
 	private int cibilId;
 	@Min(value=300,message = "Cibil score greater than 300")
 	@Max(value=900,message = "Cibil score less than 900")

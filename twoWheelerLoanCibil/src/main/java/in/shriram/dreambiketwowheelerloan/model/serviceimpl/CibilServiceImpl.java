@@ -13,7 +13,7 @@ public class CibilServiceImpl implements CibilService{
 	@Autowired
 	CibilRepo cr;
 
-	@Override 
+	@Override  
 	public Cibil updateCibilStatus(int cibilId, String status) {
 		
 		Cibil co = cr.findById(cibilId).get();

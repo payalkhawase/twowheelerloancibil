@@ -7,5 +7,5 @@ public interface CibilService {
 
 		public Cibil addData(Cibil co);
 
-}
+} 
 

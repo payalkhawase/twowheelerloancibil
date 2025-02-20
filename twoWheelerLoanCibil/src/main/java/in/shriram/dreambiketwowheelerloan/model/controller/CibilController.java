@@ -18,11 +18,10 @@ import lombok.extern.slf4j.Slf4j;
 
 @RestController
 @RequestMapping("/cibil")
-@Slf4j
 public class CibilController {
 
 	@Autowired
-	CibilService cs;
+	CibilService cs; 
 	
 
 	@PostMapping("add")
