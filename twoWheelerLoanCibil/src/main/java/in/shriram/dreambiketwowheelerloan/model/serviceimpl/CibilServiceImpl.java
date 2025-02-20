@@ -34,4 +34,10 @@ public class CibilServiceImpl implements CibilService{
 		return cr.save(co);
 	}
 
+	@Override
+	public Cibil delete(int cibilId) {
+		cr.deleteById(cibilId);
+		return null;
+	}
+
 }
