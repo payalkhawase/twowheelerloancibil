@@ -5,12 +5,18 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import in.shriram.dreambiketwowheelerloan.model.model.Cibil;
 import in.shriram.dreambiketwowheelerloan.model.service.CibilService;
+
+import jakarta.validation.Valid;
+
+
 import lombok.extern.slf4j.Slf4j;
 
 @RestController
@@ -19,7 +25,17 @@ import lombok.extern.slf4j.Slf4j;
 public class CibilController {
 
 	@Autowired
-	CibilService cs;
+	CibilService cs;  
+	
+
+	@PostMapping("add")
+	public ResponseEntity<Cibil> addData(@Valid @RequestBody Cibil co)
+	{
+		
+		Cibil c = cs.addData(co);
+		
+		return new ResponseEntity<Cibil>(c, HttpStatus.CREATED);
+	}
 		
 	@PutMapping("updateCibilStatus/{cibilId}/{status}")
 	public ResponseEntity<Cibil> updateCibil(@PathVariable("cibilId") int cibilId, @PathVariable("status") String status) {

@@ -14,11 +14,11 @@ public class CibilServiceImpl implements CibilService{
 	@Autowired
 	CibilRepo cr;
 
-	@Override 
+	@Override  
 	public Cibil updateCibilStatus(int cibilId, String status) {
 		
 		Cibil co = cr.findById(cibilId).get();
-		
+		 
 		Cibil cu = new Cibil();
 		cu.setCibilId(cibilId);
 		cu.setCibilRemark(co.getCibilRemark());
@@ -30,9 +30,15 @@ public class CibilServiceImpl implements CibilService{
 	}
 
 	@Override
+
 	public Cibil getCibilById(int cibilId) {
 				
 		return cr.findById(cibilId).get();
+	}
+
+	public Cibil addData(Cibil co) {
+		// TODO Auto-generated method stub
+		return cr.save(co);
 	}
 
 }
