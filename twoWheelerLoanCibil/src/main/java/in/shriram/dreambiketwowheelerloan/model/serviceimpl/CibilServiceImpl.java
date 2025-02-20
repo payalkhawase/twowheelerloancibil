@@ -28,4 +28,10 @@ public class CibilServiceImpl implements CibilService{
 		return cr.save(cu);
 	}
 
+	@Override
+	public Cibil addData(Cibil co) {
+		// TODO Auto-generated method stub
+		return cr.save(co);
+	}
+
 }
