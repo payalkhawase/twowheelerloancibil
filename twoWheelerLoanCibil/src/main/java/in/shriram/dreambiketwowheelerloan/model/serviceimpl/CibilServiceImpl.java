@@ -37,12 +37,19 @@ public class CibilServiceImpl implements CibilService{
 	}
 
 	@Override
+
 	public Cibil getCibilbyId(int cibilId) {
 		Optional<Cibil> op=cr.findById(cibilId);
 		if(op.isPresent()) {
-			Cibil c=op.get();
-			return c;
+			Cibil cs=op.get();
+			return cs;
 		}
+		return null;
+	}
+
+	public Cibil delete(int cibilId) {
+		cr.deleteById(cibilId);
+
 		return null;
 	}
 
