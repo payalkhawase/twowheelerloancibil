@@ -19,7 +19,7 @@ import lombok.Data;
 public class Cibil {
 
 	@Id  
-	private int cibilId;
+	private int cibilId; 
 	@Min(value=300,message = "Cibil score greater than 300")
 	@Max(value=900,message = "Cibil score less than 900")
 	private int cibilScore;

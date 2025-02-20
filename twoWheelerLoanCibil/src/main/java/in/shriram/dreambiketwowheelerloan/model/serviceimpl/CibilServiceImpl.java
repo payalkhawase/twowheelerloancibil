@@ -17,7 +17,7 @@ public class CibilServiceImpl implements CibilService{
 	public Cibil updateCibilStatus(int cibilId, String status) {
 		
 		Cibil co = cr.findById(cibilId).get();
-		
+		 
 		Cibil cu = new Cibil();
 		cu.setCibilId(cibilId);
 		cu.setCibilRemark(co.getCibilRemark());
