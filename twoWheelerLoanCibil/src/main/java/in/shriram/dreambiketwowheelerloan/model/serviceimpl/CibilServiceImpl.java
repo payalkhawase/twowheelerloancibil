@@ -1,5 +1,7 @@
 package in.shriram.dreambiketwowheelerloan.model.serviceimpl;
 
+import java.util.Optional;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -30,8 +32,18 @@ public class CibilServiceImpl implements CibilService{
 
 	@Override
 	public Cibil addData(Cibil co) {
-		// TODO Auto-generated method stub
+		
 		return cr.save(co);
+	}
+
+	@Override
+	public Cibil getCibilbyId(int cibilId) {
+		Optional<Cibil> op=cr.findById(cibilId);
+		if(op.isPresent()) {
+			Cibil c=op.get();
+			return c;
+		}
+		return null;
 	}
 
 }
