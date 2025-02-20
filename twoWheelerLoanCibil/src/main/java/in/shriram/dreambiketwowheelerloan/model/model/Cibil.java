@@ -23,7 +23,6 @@ public class Cibil {
 	@Min(value=300,message = "Cibil score greater than 300")
 	@Max(value=900,message = "Cibil score less than 900")
 	private int cibilScore;
-	@NotEmpty(message = "Date should not empty")
 	private Date cibilscoredDateTime;
 	@NotBlank(message = "Status should not be blank")
 	@NotEmpty(message = "Status should not be empty")
