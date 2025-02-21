@@ -1,5 +1,7 @@
 package in.shriram.dreambiketwowheelerloan.model.controller;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -52,6 +54,14 @@ public class CibilController {
 		Cibil c=cs.getCibilById(cibilId);
 		
 		return new ResponseEntity<Cibil>(c,HttpStatus.OK);
+	}
+	
+	@GetMapping("/approvedEnquiry/{status}")
+	public ResponseEntity<List<Cibil>> approvedEnquiry(@PathVariable("status") String status){
+		
+		List<Cibil> cb=cs.approvedEnquiry(status);
+		
+		return new ResponseEntity<List<Cibil>>(cb,HttpStatus.OK);
 	}
 
 

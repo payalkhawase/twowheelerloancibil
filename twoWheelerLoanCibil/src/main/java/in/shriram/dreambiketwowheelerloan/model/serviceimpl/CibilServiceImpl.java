@@ -1,6 +1,8 @@
 package in.shriram.dreambiketwowheelerloan.model.serviceimpl;
 
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -39,6 +41,15 @@ public class CibilServiceImpl implements CibilService{
 	public Cibil addData(Cibil co) {
 		// TODO Auto-generated method stub
 		return cr.save(co);
+	}
+
+	@Override
+	public List<Cibil> approvedEnquiry(String status) {
+		
+		Cibil c=new Cibil();
+		c.setStatus(c.getStatus());
+		
+		return cr.findByStatus(status);
 	}
 
 }
