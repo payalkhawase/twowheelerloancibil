@@ -62,6 +62,5 @@ public class CibilController {
 		Cibil co = cs.getCibilbyId(cibilId);
 		
 		return new ResponseEntity<Cibil>(co,HttpStatus.OK);
-		
 	} 
 }
