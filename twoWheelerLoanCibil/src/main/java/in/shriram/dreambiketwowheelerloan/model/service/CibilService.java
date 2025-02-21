@@ -1,5 +1,7 @@
 package in.shriram.dreambiketwowheelerloan.model.service;
 
+import java.util.List;
+
 import in.shriram.dreambiketwowheelerloan.model.model.Cibil;
 
 public interface CibilService {
@@ -12,6 +14,7 @@ public interface CibilService {
 
 		public Cibil delete(int cibilId);
 
+		
 
 }  
 

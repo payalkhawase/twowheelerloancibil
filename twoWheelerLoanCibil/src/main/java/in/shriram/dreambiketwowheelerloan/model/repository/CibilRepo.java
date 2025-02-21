@@ -8,4 +8,5 @@ import in.shriram.dreambiketwowheelerloan.model.model.Cibil;
 @Repository
 public interface CibilRepo extends JpaRepository<Cibil, Integer>{
 
+	
 }
