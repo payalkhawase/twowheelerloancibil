@@ -16,7 +16,13 @@ public interface CibilService {
 		public Cibil addData(Cibil co);
 
 
+
 		public List<Cibil> approvedEnquiry(String status);
+
+		public Cibil getCibilbyId(int cibilId);
+
+		public Cibil delete(int cibilId);
+
 
 }  
 
