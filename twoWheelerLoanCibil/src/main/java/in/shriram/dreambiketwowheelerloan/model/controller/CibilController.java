@@ -9,6 +9,8 @@ import org.springframework.http.ResponseEntity;
 
 import org.springframework.web.bind.annotation.GetMapping;
 
+import org.springframework.web.bind.annotation.GetMapping;
+
 import org.springframework.web.bind.annotation.DeleteMapping;
 
 import org.springframework.web.bind.annotation.PathVariable;
@@ -46,13 +48,13 @@ public class CibilController {
 		return new ResponseEntity<Cibil>(co,HttpStatus.OK);
 		
 	} 
+
 	@DeleteMapping("deleteSingleEnquiry/{cibilId}")
      public ResponseEntity<Cibil> delete(@PathVariable("cibilId") int cibilId){
 		
 		Cibil co=cs.delete(cibilId);
 		
 		return new ResponseEntity<Cibil>(co, HttpStatus.ACCEPTED);
-		
 	}
 	
 
@@ -62,8 +64,6 @@ public class CibilController {
 		Cibil co = cs.getCibilbyId(cibilId);
 		
 		return new ResponseEntity<Cibil>(co,HttpStatus.OK);
-		
 	} 
-	
-	
+
 }
