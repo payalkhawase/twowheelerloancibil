@@ -55,7 +55,7 @@ public class CibilServiceImpl implements CibilService{
 		c.setStatus(c.getStatus());
 		
 		return cr.findByStatus(status);
-
+	}
 
 	public Cibil getCibilbyId(int cibilId) {
 		Optional<Cibil> op=cr.findById(cibilId);
