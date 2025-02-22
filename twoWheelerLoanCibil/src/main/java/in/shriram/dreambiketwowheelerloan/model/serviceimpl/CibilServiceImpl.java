@@ -1,6 +1,11 @@
 package in.shriram.dreambiketwowheelerloan.model.serviceimpl;
 
+
+
+import java.util.List;
+
 import java.util.Optional;
+
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -31,12 +36,26 @@ public class CibilServiceImpl implements CibilService{
 	}
 
 	@Override
+
+	public Cibil getCibilById(int cibilId) {
+				
+		return cr.findById(cibilId).get();
+	}
+
 	public Cibil addData(Cibil co) {
 		
 		return cr.save(co);
 	}
 
 	@Override
+
+	public List<Cibil> approvedEnquiry(String status) {
+		
+		Cibil c=new Cibil();
+		c.setStatus(c.getStatus());
+		
+		return cr.findByStatus(status);
+
 
 	public Cibil getCibilbyId(int cibilId) {
 		Optional<Cibil> op=cr.findById(cibilId);
@@ -51,6 +70,7 @@ public class CibilServiceImpl implements CibilService{
 		cr.deleteById(cibilId);
 
 		return null;
+
 	}
 
 }
