@@ -1,13 +1,17 @@
 package in.shriram.dreambiketwowheelerloan.model.serviceimpl;
 
 
+import java.util.Date;
 import java.util.List;
 import java.util.Optional;
+import java.util.Random;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import in.shriram.dreambiketwowheelerloan.model.model.Cibil;
 import in.shriram.dreambiketwowheelerloan.model.repository.CibilRepo;
 import in.shriram.dreambiketwowheelerloan.model.service.CibilService;
+import jakarta.persistence.GenerationType;
 
 @Service
 public class CibilServiceImpl implements CibilService{
@@ -39,7 +43,48 @@ public class CibilServiceImpl implements CibilService{
 
 	public Cibil addData(Cibil co) {
 		
-		return cr.save(co);
+		//Cibil co = new Cibil(); 
+		//co.setCibilId(co.getCibilId());
+			Random randam = new Random();
+			
+			int low = 300;
+			int high = 900;
+			int score =  randam.nextInt(high-low) + low;
+			
+			co.setCibilScore(score);
+		
+			co.setCibilscoredDateTime(new Date()); 
+			
+			String status1;
+			
+			if(score > 700)
+				status1 = "Approved";
+			else
+				status1="Rejected";
+			
+			co.setStatus(status1);
+		
+			String remark = "Good";
+			
+			if(score >= 300 && score <= 600)
+				remark="Need Help";
+			
+			if(score > 600 && score <= 700)
+				remark="Average";
+			
+			if(score > 700 && score <= 760)
+				remark="Good";
+			
+			if(score > 760 && score <= 800)
+				remark="Very Good";
+			
+			if(score > 800 && score <= 900)
+				remark="Excellent";
+			
+			co.setCibilRemark(remark);
+		
+			//cr.saveAndFlush(co);
+			return cr.save(co);
 	}
 
 	@Override
@@ -49,7 +94,7 @@ public class CibilServiceImpl implements CibilService{
 		Cibil c=new Cibil();
 		c.setStatus(c.getStatus());
 		
-		return cr.findByStatus(status);
+		return cr.findAll();
 	}
 
 	public Cibil getCibilbyId(int cibilId) {

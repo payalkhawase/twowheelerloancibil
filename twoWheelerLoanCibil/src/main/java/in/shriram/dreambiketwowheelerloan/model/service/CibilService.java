@@ -13,7 +13,7 @@ public interface CibilService {
 
  
 
-		public Cibil addData(Cibil co);
+		public Cibil addData(Cibil c);
 
 
 

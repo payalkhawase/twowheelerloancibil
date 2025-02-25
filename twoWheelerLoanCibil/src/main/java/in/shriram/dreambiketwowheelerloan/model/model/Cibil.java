@@ -18,18 +18,12 @@ import lombok.Data;
 @Data
 public class Cibil {
 	@Id
+	@GeneratedValue(strategy = GenerationType.AUTO)
     private int cibilId; 
-	@Min(value=300,message = "Cibil score greater than 300")
-	@Max(value=900,message = "Cibil score less than 900")
 	private int cibilScore;
 	private Date cibilscoredDateTime;
-	@NotBlank(message = "Status should not be blank")
-	@NotEmpty(message = "Status should not be empty")
 	private String status;
-	//{Excellent,VeryGood,Good};
-	@NotBlank(message = "Cibil remark should not be blank")
-	@NotEmpty(message = "Cibil remark should not be empty")
-	@NotNull(message = "Cibil remark should not be null")
 	private String cibilRemark;
 
 }
+  
