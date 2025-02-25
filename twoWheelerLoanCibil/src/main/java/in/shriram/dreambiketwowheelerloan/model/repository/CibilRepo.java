@@ -11,8 +11,5 @@ import in.shriram.dreambiketwowheelerloan.model.model.Cibil;
 public interface CibilRepo extends JpaRepository<Cibil, Integer>{
 
 
-	
-
-	List<Cibil> findByStatus(String status);
 
 }

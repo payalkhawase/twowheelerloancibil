@@ -7,6 +7,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PatchMapping;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -31,12 +32,12 @@ public class CibilController {
 	
 
 	@PostMapping("add")
-	public ResponseEntity<Cibil> addData(@Valid @RequestBody Cibil co)
+	public ResponseEntity<Cibil> addData(@RequestBody Cibil c)
 	{
 		
-		Cibil c = cs.addData(co);
+		Cibil co = cs.addData(c);
 		
-		return new ResponseEntity<Cibil>(c, HttpStatus.CREATED);
+		return new ResponseEntity<Cibil>(co, HttpStatus.CREATED);
 	}
 		
 	@PutMapping("updateCibilStatus/{cibilId}/{status}")
